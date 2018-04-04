@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My first Vue app</title>
+  <title></title>
   <script src="https://unpkg.com/vue"></script>
+
+    <style>
+    
+    .color-red { color: red; }
+    .color-blue { color: blue; }
+    
+    </style>
+
 </head>
 <body>
 
   <div id="root">
-    <ul>
-      <li v-for="name in names" v-text="name"></li><br>
-      <li v-for="name in names">{{ name }}</li>
-    </ul>
-    <input id="input" type="text" v-model="newName">
-    <button v-on:click="addName">Add Name</button>
-     <!-- v-on:click ou @click -->
+   
+    <h1 :class="className">AkkadLeBoss</h1>
+
   </div>
 
 
@@ -22,19 +26,16 @@
   <script>
 
    var app = new Vue({
+
      el: '#root',
+
      data: {
-       newName: '',
-       names: ['Frite', 'Mayo', 'Cocacola', 'Chicha']
-     },
 
-     methods: {
-       addName() {
-         this.names.push(this.newName);
-         this.newName = '';
-        }
-     },
+      className: 'color-red'
+      
+     }
 
+ 
    });
 
   
