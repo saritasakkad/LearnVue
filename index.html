@@ -4,20 +4,19 @@
   <title></title>
   <script src="https://unpkg.com/vue"></script>
 
-    <style>
-    
-    .is-loading { background: red; }
-    
-    </style>
 
 </head>
 <body>
 
   <div id="root">
    
-    <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me</button>
+    <h1>
 
-    <!-- is-loading : true ou false -->
+        {{ message.split('').reverse().join('') }}
+
+        <!-- {{ message.split('').reverse().join('') }} permet d' écrireen verlant-->
+
+    </h1>
 
   </div>
 
@@ -32,21 +31,10 @@
 
      data: {
 
-      isLoading: false
+        message: 'AkkadLeBoss'
       
-     },
-
-     methods: {
-
-      toggleClass() {
-
-        this.isLoading = true;
-
-      }
-
      }
 
- 
    });
 
   
