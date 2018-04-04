@@ -11,8 +11,9 @@
       <li v-for="name in names" v-text="name"></li><br>
       <li v-for="name in names">{{ name }}</li>
     </ul>
-    <input id="input" type="text" v-model="newName" v-on:keyUp="addName">
+    <input id="input" type="text" v-model="newName">
     <button v-on:click="addName">Add Name</button>
+     <!-- v-on:click ou @click -->
   </div>
 
 
