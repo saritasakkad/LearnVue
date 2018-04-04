@@ -11,7 +11,7 @@
       <li v-for="name in names" v-text="name"></li><br>
       <li v-for="name in names">{{ name }}</li>
     </ul>
-    <input id="input" type="text" v-model="newName">
+    <input id="input" type="text" v-model="newName" v-on:keyUp="addName">
     <button v-on:click="addName">Add Name</button>
   </div>
 
@@ -30,16 +30,10 @@
      methods: {
        addName() {
          this.names.push(this.newName);
-       }
+         this.newName = '';
+        }
      },
 
-    // mounted() {
-    //  document.querySelector('#button').addEventListener('click', () => {
-     // let name = document.querySelector('#input').value;
-     // app.names.push(name);
-     // name.value = '';
-  // });
-   //  }
    });
 
   
