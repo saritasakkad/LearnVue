@@ -10,20 +10,29 @@
 </head>
 <body>
 
-  <div id="root" class="container">
+  <div id="root" class="container">                              <!-- ul#tabs>li*4>a[href=#] permet de crée direct sidesous emmet  -->
+  
+    <tabs>
 
+      <tab name="Tpoul Be" :selected="true">
 
+        <h1>du pk du pk c'est bien du pk pdu pk...</h1>
 
-      <modal v-if="showModal" @close="showModal = false">
+      </tab>
 
+      <tab name="Tpoul fr">
 
-          <p>Akkad c'est le boss, des blague abstret... ... parceque tes mot moeur.</p>
+          <h1>du pk du pk c'est bien du proutte pk...</h1>
+  
+        </tab>
 
+        <tab name="Tpoul en">
 
-      </modal>  <!-- v-if=" ... "  @close=" ... = false" -->
+            <h1>du pk du pk c'est pas cool du pk pdu pk...</h1>
+    
+          </tab>
 
-    <button @click="showModal = true">Show Model</button>  <!-- @click=" ... = true" -->
-
+    </tabs>
      
    
   </div>

@@ -1,37 +1,67 @@
-Vue.component('modal', {
+Vue.component('tabs', {
 
 
     template: `
+
+    <div>  
     
-    <div class="modal is-active"> <!-- a la suiste de 'modal' on ajoute  'is-active' qui permet de le voire...  -->
+        <div class="tabs">
 
-    <div class="modal-background"></div>
+            <ul>
 
-      <div class="modal-content">
+                <li v-for="tab in tabs">
+                
+                <a href="#">{{ tab.name }}</a> 
+                
+                </li>
 
-        <div class="box">
-
-          <slot></slot>
+            </ul>
 
         </div>
-      
-      </div>
 
-    <button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>   <!--  @click="$emit('close')" -->
+        <div class="tabs-details">
 
-  </div>
+            <slot></slot>
+
+        </div>
+
+    </div>
     
-    `
+    `,
+
+    data() {
+
+        return { tabs: [] };
+
+    },
+
+    created() {
+
+        this.tabs = this.$children;
+
+    }
+
+});
+
+
+Vue.component('tab', {
+
+    template: `
+
+        <div><slot></slot></div>
+    
+    `,
+
+    props: {
+
+        name: { required: true}
+
+    }
 
 });
 
 new Vue({
 
-    el: '#root',
+    el: '#root'
 
-    data: {
-
-        showModal: false
-
-    }
 });
