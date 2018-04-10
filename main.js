@@ -1,9 +1,6 @@
-Vue.component('progress-view', {
+Vue.component('......', {
     
-    data() {
-return { completionRate: 69  };
 
-    }
 
 });
 
